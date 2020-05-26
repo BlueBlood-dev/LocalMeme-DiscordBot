@@ -7,14 +7,6 @@ randomPhrases = [
     'your vocabulary of phrases outta here
 ]
 
-'''
-   print("conditions:", data['weather'][0]['description'])
-    print("temp:", data['main']['temp'])
-    print("temp_min:", data['main']['temp_min'])
-    print("temp_max:", data['main']['temp_max'])
-'''
-
-
 def getWheather():
     try:
         city_id = 498817 #you can check for your city id
@@ -29,6 +21,7 @@ def getWheather():
 
 
 client = discord.Client()
+
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
@@ -38,10 +31,10 @@ async def on_message(message):
     #if (message.author == client.user):
      #   return
     if (message.content.startswith('!hi')):
-        myid = '<@482914850863841280>'
+        myid = '<user id u want to mention>'
         await message.channel.send('%s базарит:ЗДАРОВА БАНДИТЫ' %myid)
     if (message.content.startswith('!hug')):
-       myid = '<@482914850863841280>'
+       myid = '<user id u want to mention>'
        await message.channel.send( '%sобнял вас' % myid)
     if (message.content.startswith('!image')):
         num = random.randint(1,34)#the amount might differ
